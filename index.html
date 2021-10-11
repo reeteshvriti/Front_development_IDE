@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<HTML lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=0.4">
+    
+    <script src="jquery.min.js"></script>
+     
+    
+    <title>Coder RV</title>
+
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+
+
+       <div class="highlightedbutton"></div>     
+  
+
+
+    <div id="topic"> 
+
+       <h2>Front End Development IDE </h2>
+
+      </div>
+
+       <div id="header">
+ 
+         <div id="logo"> Coder RV</div>
+
+
+         <div id="buttoncontainer">
+
+            <div class="buttons active" id="html">HTML</div>
+
+            <div class="buttons" id="css">CSS</div>
+
+            <div class="buttons" id="javascript">Javascript</div>
+
+            <div class="buttons active" id="output">OUTPUT</div>
+
+          </div>
+
+   </div>
+
+   <div id="bodyconatiner">
+       
+     
+
+    <textarea id="htmlpanel" class="panel"><h2 id="header">Hello World!</h2></textarea>
+
+    <textarea id="csspanel" class="panel hidden">h2 {color:blue;}</textarea>
+
+    <textarea id="javascriptpanel" class="panel hidden">document.getElementById("header").innerHTML = "HELLO INDIA :-)"</textarea>
+ 
+    <iframe id="outputpanel" class="panel"></iframe>
+
+
+   </div>
+
+
+
+     <div id="name">
+      <center>
+         <h3 > BY:- REETESH V</h3>
+      </center>
+
+      </div>
+
+      <script type="text/javascript">
+       
+       function updateOutput() {
+          $("iframe").contents().find("html").html("<html><head><style type='text/css'>" + $("#csspanel").val() + "</style></head><body>" + 
+            $("#htmlpanel").val() + "</body></html>" );
+      
+              document.getElementById("outputpanel").contentWindow.eval($("#javascriptpanel").val());
+
+             
+       
+         }
+
+
+        $(".buttons").hover(function(){
+      
+          $(this).addClass("highlightedbutton");
+      
+          } , function(){
+
+           $(this).removeClass("highlightedbutton");
+         
+         });
+
+        $(".buttons").click(function() {
+
+          $(this).toggleClass("active");
+
+   
+           //removes the color skyblue when the mouse is unclicked
+          $(this).removeClass("highlightedbutton");
+
+          var panelId = $(this).attr("id") + "panel";
+
+          $("#" + panelId).toggleClass("hidden");
+
+          // to make it display all the 4 blocks when clicked
+          
+          var noOfActivePanels = 4 - $(".hidden").length;
+
+       // now instead of making all 4 to be visible at a same time it will auto delete by the active panels 
+
+          $(".panel").width(($(window).width()/ noOfActivePanels)-10);
+
+         });
+
+        ( $(".panel").height($(window).height() - $("#header").height()-10));
+
+        //end of making 4 panel
+
+         $(".panel").width(($(window).width()/2)-9);
+
+        updateOutput()
+
+
+         $("textarea").on("change keyup paste", function() {
+      
+         updateOutput();
+
+        });
+
+      
+      </script>
+
+
+
+</body>
+</html>

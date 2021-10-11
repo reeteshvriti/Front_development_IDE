@@ -1,0 +1,109 @@
+
+ html{
+     user-select: none;
+ }
+
+
+body{
+    font-family: sans-serif;
+    padding:0;
+    margin:0;
+    
+}
+
+#header{
+    width:100%;
+    background-color:lightgrey;
+    padding:18px; 
+    height:20px;  
+    user-select: none;
+}
+
+  #topic{
+      margin-top:0px ;
+      height:50px;
+      background-color: #8B0000;
+  }
+ 
+
+
+
+  h2{
+      
+      margin:0 auto;
+      text-align: center;
+
+  }
+
+
+#buttoncontainer{
+    width: 300px;
+    margin:0 auto;
+    padding: -2px;
+}
+
+.buttons{
+    float:left;
+    border: solid 1px black;
+    padding: 8px; 
+    border-right: none; 
+    margin-top:-10px; 
+    font-size: 100%;   
+   
+}
+
+#logo{
+    float:left;
+    padding:3px 3px;
+    font-size: 20px;
+    font-weight:bold;
+
+}
+
+
+#html{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px; 
+}
+
+#output{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px; 
+    border-right: 1px solid black;
+   
+}
+
+.active{
+   
+     background-color:lightsteelblue;
+}
+
+.highlightedbutton{
+    background-color: grey;
+}
+
+textarea{
+    border-top: none;
+    width:50%;
+    resize: none;
+    border: 0px 1px solid black;
+}
+
+.panel{
+    float:left;
+    width:50%;
+    border-left: none; 
+}
+
+iframe{
+    border: none;
+}
+
+
+.hidden{
+    display:none;
+}
+
+#name{
+   margin-top: 1000px;
+}
